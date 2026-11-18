@@ -1,0 +1,20 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><title>ShopMart</title>
+<style>
+body{margin:0;font:15px/1.4 system-ui,sans-serif;background:#fff;color:#111}
+.hero{height:140px;background:linear-gradient(90deg,#d62728,#ff7f0e 50%,#2ca02c);color:#fff;padding:24px;font-size:28px;font-weight:700}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;padding:20px}
+.card{border:1px solid #ddd;border-radius:10px;padding:10px}
+.img{height:70px;border-radius:6px}
+.sale{display:inline-block;background:#e53935;color:#fff;padding:2px 8px;border-radius:4px;font-weight:700}
+.stock{color:#2e7d32;font-weight:600}.out{color:#c62828;font-weight:600}
+button{background:#2e7d32;color:#fff;border:0;padding:8px 14px;border-radius:6px;font-weight:600;transition:background .2s}
+button:hover{background:#1b5e20}button.danger{background:#c62828}
+.stars{color:#f5a623;letter-spacing:2px}
+</style></head><body>
+<div class="hero" data-points="10:100,300:100,500:100,700:100,990:100">Summer sale - up to 60% off</div>
+<div class="grid">
+<div class="card"><div class="img" data-probe data-expect="#8d6e63" style="background:#8d6e63"></div><span class="sale">-30%</span><div class="stars">★★★★☆</div><div class="stock">In stock</div><button>Add to cart</button></div>
+<div class="card"><div class="img" data-probe data-expect="#26a69a" style="background:#26a69a"></div><span class="sale">-50%</span><div class="stars">★★★☆☆</div><div class="out">Sold out</div><button class="danger">Notify me</button></div>
+<div class="card"><div class="img" data-probe data-expect="#ab47bc" style="background:#ab47bc"></div><div class="stars">★★★★★</div><div class="stock">In stock</div><button>Add to cart</button></div>
+<div class="card"><div class="img" data-probe data-expect="#ef6c00" style="background:#ef6c00"></div><div class="out">2 left</div><button>Add to cart</button></div>
+</div></body></html>

@@ -1,0 +1,255 @@
+{
+  "date": "2026-11-18T04:45:27.412Z",
+  "results": [
+    {
+      "name": "extension loads and service worker starts",
+      "pass": true,
+      "detail": "id=gncmeheilffbgnobfhbooncepegheiod"
+    },
+    {
+      "name": "pixels match engine matrix: news",
+      "pass": true,
+      "detail": "6 samples, worst diff 0 (), 6 visibly shifted"
+    },
+    {
+      "name": "disable restores original pixels exactly: news",
+      "pass": true,
+      "detail": "worst diff 0"
+    },
+    {
+      "name": "pixels match engine matrix: shop",
+      "pass": true,
+      "detail": "9 samples, worst diff 3 (div#0@500:100), 9 visibly shifted"
+    },
+    {
+      "name": "disable restores original pixels exactly: shop",
+      "pass": true,
+      "detail": "worst diff 0"
+    },
+    {
+      "name": "pixels match engine matrix: social",
+      "pass": true,
+      "detail": "4 samples, worst diff 0 (), 4 visibly shifted"
+    },
+    {
+      "name": "disable restores original pixels exactly: social",
+      "pass": true,
+      "detail": "worst diff 0"
+    },
+    {
+      "name": "pixels match engine matrix: education",
+      "pass": true,
+      "detail": "5 samples, worst diff 0 (), 5 visibly shifted"
+    },
+    {
+      "name": "disable restores original pixels exactly: education",
+      "pass": true,
+      "detail": "worst diff 0"
+    },
+    {
+      "name": "pixels match engine matrix: charts",
+      "pass": true,
+      "detail": "11 samples, worst diff 0 (), 11 visibly shifted"
+    },
+    {
+      "name": "disable restores original pixels exactly: charts",
+      "pass": true,
+      "detail": "worst diff 0"
+    },
+    {
+      "name": "pixels match engine matrix: dark",
+      "pass": true,
+      "detail": "5 samples, worst diff 1 (span#2), 3 visibly shifted"
+    },
+    {
+      "name": "disable restores original pixels exactly: dark",
+      "pass": true,
+      "detail": "worst diff 0"
+    },
+    {
+      "name": "pixels match engine matrix: complex",
+      "pass": true,
+      "detail": "19 samples, worst diff 1 (div#4@10:10), 19 visibly shifted"
+    },
+    {
+      "name": "disable restores original pixels exactly: complex",
+      "pass": true,
+      "detail": "worst diff 0"
+    },
+    {
+      "name": "all 6 profiles x 2 modes: pixels match engine (charts page)",
+      "pass": true,
+      "detail": "worst diff 1 "
+    },
+    {
+      "name": "repeated toggling leaves exactly one filter set (no stacking) and clean removal",
+      "pass": true,
+      "detail": "6 cycles"
+    },
+    {
+      "name": "filter values equal engine output for current settings",
+      "pass": true,
+      "detail": "1.118705 -0.088615 -0.030091 0 0 -0.117488 1.087706 0.029782 0 0 0.81428 -0.607869 0.793588 0 0 0 0 0 1 0"
+    },
+    {
+      "name": "page <html> inline style is never modified",
+      "pass": true,
+      "detail": "null"
+    },
+    {
+      "name": "no ColorVision traces remain in DOM after disable",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "layout unchanged (fixed/sticky/scroll height/shadow host/button)",
+      "pass": true,
+      "detail": "before={\"fixedBottom\":16,\"fixedRight\":16,\"sticky\":0,\"scrollH\":2600,\"hostW\":140,\"btn\":65.5} after={\"fixedBottom\":16,\"fixedRight\":16,\"sticky\":0,\"scrollH\":2600,\"hostW\":140,\"btn\":65.5}"
+    },
+    {
+      "name": "position:fixed and sticky still track the viewport after scrolling",
+      "pass": true,
+      "detail": "fixedBottom 16, sticky 0"
+    },
+    {
+      "name": "fixed-position element is colour-corrected at its scrolled position",
+      "pass": true,
+      "detail": "got 235,0,255 expected 235,0,255"
+    },
+    {
+      "name": "buttons, text inputs and selects keep working",
+      "pass": true,
+      "detail": "{\"title\":\"clicked 1\",\"name\":\"Grace Hopper\",\"sel\":\"Two\"}"
+    },
+    {
+      "name": "CSS :hover transitions still fire",
+      "pass": true,
+      "detail": "rgb(214, 39, 40)"
+    },
+    {
+      "name": "CSS animations still run",
+      "pass": true,
+      "detail": "rgb(212, 40, 40) -> rgb(164, 75, 41)"
+    },
+    {
+      "name": "img corrected",
+      "pass": true,
+      "detail": "worst diff 0 (tolerance 4)"
+    },
+    {
+      "name": "canvas corrected",
+      "pass": true,
+      "detail": "worst diff 0 (tolerance 4)"
+    },
+    {
+      "name": "canvas corrected",
+      "pass": true,
+      "detail": "worst diff 0 (tolerance 4)"
+    },
+    {
+      "name": "video (processVideo=false): partial reversal leaves video measurably closer to the original than a corrected image",
+      "pass": true,
+      "detail": "remaining shift / full shift per sample: 0.78, 0.07 (saturated colours cannot be fully restored; documented)"
+    },
+    {
+      "name": "img corrected",
+      "pass": true,
+      "detail": "worst diff 0 (tolerance 4)"
+    },
+    {
+      "name": "canvas corrected",
+      "pass": true,
+      "detail": "worst diff 0 (tolerance 4)"
+    },
+    {
+      "name": "canvas corrected",
+      "pass": true,
+      "detail": "worst diff 0 (tolerance 4)"
+    },
+    {
+      "name": "video (processVideo=true) corrected",
+      "pass": true,
+      "detail": "worst diff 0 (tolerance 4)"
+    },
+    {
+      "name": "content inserted after load is corrected (no per-node work)",
+      "pass": true,
+      "detail": "got 235,0,255 expected 235,0,255"
+    },
+    {
+      "name": "survives heavy DOM mutation with filter intact",
+      "pass": true,
+      "detail": "831 rows"
+    },
+    {
+      "name": "hostile page removing the filter: bounded retries, no infinite mutation loop",
+      "pass": true,
+      "detail": "insertions 21 then 21"
+    },
+    {
+      "name": "iframe content is corrected exactly once (top frame only)",
+      "pass": true,
+      "detail": "diff 0,0, injected into frame: false"
+    },
+    {
+      "name": "automatic off / per-site on / per-site off rules",
+      "pass": true,
+      "detail": "auto-off idle, site-on applies, site-off removes"
+    },
+    {
+      "name": "popup shows active-site status for the focused tab",
+      "pass": true,
+      "detail": "Active on this site | 127.0.0.1 | Pause on this site"
+    },
+    {
+      "name": "selecting a profile in the popup persists to chrome.storage.local",
+      "pass": true,
+      "detail": "protanopia"
+    },
+    {
+      "name": "intensity slider is keyboard operable and persists",
+      "pass": true,
+      "detail": "1"
+    },
+    {
+      "name": "popup change reaches the open page immediately",
+      "pass": true,
+      "detail": "filter updated live"
+    },
+    {
+      "name": "popup master switch removes correction from the page immediately",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "reset restores defaults (correction off)",
+      "pass": true,
+      "detail": "{\"enabled\":false,\"profile\":\"deuteranomaly\"}"
+    },
+    {
+      "name": "calibration flow saves personalised parameters locally",
+      "pass": true,
+      "detail": "{\"completedAt\":1794977117906,\"family\":\"deutan\",\"mode\":\"natural\",\"severity\":0.27,\"strength\":0.25}"
+    },
+    {
+      "name": "performance sample recorded (scroll + 300 DOM inserts/s, headless software rendering)",
+      "pass": true,
+      "detail": "frame median off 16.7ms vs on 16.7ms; p95 off 16.8 vs on 16.8; long tasks off 0 vs on 0"
+    },
+    {
+      "name": "no network requests leave the machine (only the local fixture server)",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "manifest API permissions are only [storage]; no host_permissions, tabs or activeTab (all-sites access comes from the content-script match)",
+      "pass": true,
+      "detail": "[\"storage\"]"
+    },
+    {
+      "name": "no console errors on extension pages or fixtures",
+      "pass": true,
+      "detail": ""
+    }
+  ]
+}

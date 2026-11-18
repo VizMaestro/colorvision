@@ -1,0 +1,701 @@
+{
+  "date": "2026-11-18T04:36:01.876Z",
+  "results": [
+    {
+      "name": "bbc-news",
+      "category": "news",
+      "url": "https://www.bbc.com/news",
+      "attempt": 1,
+      "status": 200,
+      "filterApplied": true,
+      "layoutUnchangedAroundToggle": true,
+      "layout": {
+        "onBefore": {
+          "scrollHeight": 6241,
+          "scrollWidth": 1280,
+          "elements": 1434,
+          "bodyHeight": 6193
+        },
+        "onAfter": {
+          "scrollHeight": 6241,
+          "scrollWidth": 1280,
+          "elements": 1434,
+          "bodyHeight": 6193
+        },
+        "offBefore": {
+          "scrollHeight": 6240,
+          "scrollWidth": 1280,
+          "elements": 1433,
+          "bodyHeight": 6192
+        },
+        "offAfter": {
+          "scrollHeight": 6240,
+          "scrollWidth": 1280,
+          "elements": 1433,
+          "bodyHeight": 6192
+        }
+      },
+      "jsErrors": {
+        "windowCorrectionOff": 0,
+        "windowCorrectionOn": 0
+      },
+      "pixels": {
+        "stableFraction": 1,
+        "matchOfStable": 0.91521875,
+        "visiblyChangedOfStable": 0.062498046875
+      },
+      "removedCleanly": true,
+      "scroll": {
+        "off": {
+          "median": 16.699999999999818,
+          "p95": 16.700000000000728,
+          "long": 0
+        },
+        "on": {
+          "median": 16.700000000000728,
+          "p95": 16.700000000000728,
+          "long": 0
+        }
+      },
+      "result": "PASS"
+    },
+    {
+      "name": "hacker-news",
+      "category": "news",
+      "url": "https://news.ycombinator.com/",
+      "attempt": 1,
+      "status": 200,
+      "filterApplied": true,
+      "layoutUnchangedAroundToggle": true,
+      "layout": {
+        "onBefore": {
+          "scrollHeight": 1214,
+          "scrollWidth": 1280,
+          "elements": 810,
+          "bodyHeight": 1198
+        },
+        "onAfter": {
+          "scrollHeight": 1214,
+          "scrollWidth": 1280,
+          "elements": 810,
+          "bodyHeight": 1198
+        },
+        "offBefore": {
+          "scrollHeight": 1214,
+          "scrollWidth": 1280,
+          "elements": 810,
+          "bodyHeight": 1198
+        },
+        "offAfter": {
+          "scrollHeight": 1214,
+          "scrollWidth": 1280,
+          "elements": 810,
+          "bodyHeight": 1198
+        }
+      },
+      "jsErrors": {
+        "windowCorrectionOff": 0,
+        "windowCorrectionOn": 0
+      },
+      "pixels": {
+        "stableFraction": 1,
+        "matchOfStable": 1,
+        "visiblyChangedOfStable": 0.0244208984375
+      },
+      "removedCleanly": true,
+      "scroll": {
+        "off": {
+          "median": 16.699999999999818,
+          "p95": 16.700000000000728,
+          "long": 0
+        },
+        "on": {
+          "median": 16.69999999999891,
+          "p95": 16.700000000000728,
+          "long": 0
+        }
+      },
+      "result": "PASS"
+    },
+    {
+      "name": "walmart-home",
+      "category": "shopping",
+      "url": "https://www.walmart.com/",
+      "attempt": 1,
+      "status": 200,
+      "filterApplied": true,
+      "layoutUnchangedAroundToggle": true,
+      "layout": {
+        "onBefore": {
+          "scrollHeight": 2153,
+          "scrollWidth": 1280,
+          "elements": 2196,
+          "bodyHeight": 2152
+        },
+        "onAfter": {
+          "scrollHeight": 2153,
+          "scrollWidth": 1280,
+          "elements": 2196,
+          "bodyHeight": 2152
+        },
+        "offBefore": {
+          "scrollHeight": 2153,
+          "scrollWidth": 1280,
+          "elements": 2196,
+          "bodyHeight": 2152
+        },
+        "offAfter": {
+          "scrollHeight": 2153,
+          "scrollWidth": 1280,
+          "elements": 2196,
+          "bodyHeight": 2152
+        }
+      },
+      "jsErrors": {
+        "windowCorrectionOff": 0,
+        "windowCorrectionOn": 0
+      },
+      "pixels": {
+        "stableFraction": 0.99981640625,
+        "matchOfStable": 0.9996444659761753,
+        "visiblyChangedOfStable": 0.43747680238168724
+      },
+      "removedCleanly": true,
+      "scroll": {
+        "off": {
+          "median": 16.699999999999818,
+          "p95": 16.800000000000182,
+          "long": 0
+        },
+        "on": {
+          "median": 16.69999999999891,
+          "p95": 16.700000000000728,
+          "long": 0
+        }
+      },
+      "result": "PASS"
+    },
+    {
+      "name": "ebay-home",
+      "category": "shopping",
+      "url": "https://www.ebay.com/",
+      "attempt": 2,
+      "status": 200,
+      "filterApplied": true,
+      "layoutUnchangedAroundToggle": true,
+      "layout": {
+        "onBefore": {
+          "scrollHeight": 3961,
+          "scrollWidth": 1280,
+          "elements": 2793,
+          "bodyHeight": 3961
+        },
+        "onAfter": {
+          "scrollHeight": 3961,
+          "scrollWidth": 1280,
+          "elements": 2793,
+          "bodyHeight": 3961
+        },
+        "offBefore": {
+          "scrollHeight": 3961,
+          "scrollWidth": 1280,
+          "elements": 2793,
+          "bodyHeight": 3961
+        },
+        "offAfter": {
+          "scrollHeight": 3961,
+          "scrollWidth": 1280,
+          "elements": 2793,
+          "bodyHeight": 3961
+        }
+      },
+      "jsErrors": {
+        "windowCorrectionOff": 0,
+        "windowCorrectionOn": 0
+      },
+      "pixels": {
+        "stableFraction": 0.894134765625,
+        "matchOfStable": 0.9738257349873416,
+        "visiblyChangedOfStable": 0.1600403672370068
+      },
+      "removedCleanly": true,
+      "scroll": {
+        "off": {
+          "median": 16.699999999999818,
+          "p95": 16.700000000000728,
+          "long": 0
+        },
+        "on": {
+          "median": 16.69999999999891,
+          "p95": 16.700000000000728,
+          "long": 0
+        }
+      },
+      "result": "PASS"
+    },
+    {
+      "name": "mastodon",
+      "category": "social media",
+      "url": "https://mastodon.social/explore",
+      "attempt": 1,
+      "status": 200,
+      "filterApplied": true,
+      "layoutUnchangedAroundToggle": true,
+      "layout": {
+        "onBefore": {
+          "scrollHeight": 9350,
+          "scrollWidth": 1280,
+          "elements": 552,
+          "bodyHeight": 9350
+        },
+        "onAfter": {
+          "scrollHeight": 9350,
+          "scrollWidth": 1280,
+          "elements": 552,
+          "bodyHeight": 9350
+        },
+        "offBefore": {
+          "scrollHeight": 9350,
+          "scrollWidth": 1280,
+          "elements": 552,
+          "bodyHeight": 9350
+        },
+        "offAfter": {
+          "scrollHeight": 9350,
+          "scrollWidth": 1280,
+          "elements": 552,
+          "bodyHeight": 9350
+        }
+      },
+      "jsErrors": {
+        "windowCorrectionOff": 0,
+        "windowCorrectionOn": 0
+      },
+      "pixels": {
+        "stableFraction": 1,
+        "matchOfStable": 1,
+        "visiblyChangedOfStable": 0.1157021484375
+      },
+      "removedCleanly": true,
+      "scroll": {
+        "off": {
+          "median": 16.699999999999818,
+          "p95": 16.799999999999272,
+          "long": 0
+        },
+        "on": {
+          "median": 16.69999999999891,
+          "p95": 16.700000000000728,
+          "long": 0
+        }
+      },
+      "result": "PASS"
+    },
+    {
+      "name": "reddit-old",
+      "category": "social media",
+      "url": "https://old.reddit.com/",
+      "attempt": 1,
+      "status": 200,
+      "filterApplied": true,
+      "layoutUnchangedAroundToggle": true,
+      "layout": {
+        "onBefore": {
+          "scrollHeight": 800,
+          "scrollWidth": 1280,
+          "elements": 324,
+          "bodyHeight": 799
+        },
+        "onAfter": {
+          "scrollHeight": 800,
+          "scrollWidth": 1280,
+          "elements": 324,
+          "bodyHeight": 799
+        },
+        "offBefore": {
+          "scrollHeight": 800,
+          "scrollWidth": 1280,
+          "elements": 324,
+          "bodyHeight": 799
+        },
+        "offAfter": {
+          "scrollHeight": 800,
+          "scrollWidth": 1280,
+          "elements": 324,
+          "bodyHeight": 799
+        }
+      },
+      "jsErrors": {
+        "windowCorrectionOff": 0,
+        "windowCorrectionOn": 0
+      },
+      "pixels": {
+        "stableFraction": 1,
+        "matchOfStable": 0.9998125,
+        "visiblyChangedOfStable": 0.0044560546875
+      },
+      "removedCleanly": true,
+      "scroll": {
+        "off": {
+          "median": 16.699999999999818,
+          "p95": 16.800000000000182,
+          "long": 0
+        },
+        "on": {
+          "median": 16.69999999999891,
+          "p95": 16.700000000000728,
+          "long": 0
+        }
+      },
+      "result": "PASS"
+    },
+    {
+      "name": "wikipedia-cvd",
+      "category": "educational",
+      "url": "https://en.wikipedia.org/wiki/Color_blindness",
+      "attempt": 1,
+      "status": 200,
+      "filterApplied": true,
+      "layoutUnchangedAroundToggle": true,
+      "layout": {
+        "onBefore": {
+          "scrollHeight": 29291,
+          "scrollWidth": 1280,
+          "elements": 6782,
+          "bodyHeight": 800
+        },
+        "onAfter": {
+          "scrollHeight": 29291,
+          "scrollWidth": 1280,
+          "elements": 6782,
+          "bodyHeight": 800
+        },
+        "offBefore": {
+          "scrollHeight": 29291,
+          "scrollWidth": 1280,
+          "elements": 6782,
+          "bodyHeight": 800
+        },
+        "offAfter": {
+          "scrollHeight": 29291,
+          "scrollWidth": 1280,
+          "elements": 6782,
+          "bodyHeight": 800
+        }
+      },
+      "jsErrors": {
+        "windowCorrectionOff": 0,
+        "windowCorrectionOn": 0
+      },
+      "pixels": {
+        "stableFraction": 0.9992578125,
+        "matchOfStable": 1,
+        "visiblyChangedOfStable": 0.05111215355146398
+      },
+      "removedCleanly": true,
+      "scroll": {
+        "off": {
+          "median": 16.699999999999818,
+          "p95": 16.700000000000728,
+          "long": 0
+        },
+        "on": {
+          "median": 16.69999999999891,
+          "p95": 16.700000000000728,
+          "long": 0
+        }
+      },
+      "result": "PASS"
+    },
+    {
+      "name": "khan-academy",
+      "category": "educational (SPA)",
+      "url": "https://www.khanacademy.org/",
+      "attempt": 1,
+      "status": 200,
+      "filterApplied": true,
+      "layoutUnchangedAroundToggle": true,
+      "layout": {
+        "onBefore": {
+          "scrollHeight": 11467,
+          "scrollWidth": 1280,
+          "elements": 1565,
+          "bodyHeight": 800
+        },
+        "onAfter": {
+          "scrollHeight": 11467,
+          "scrollWidth": 1280,
+          "elements": 1565,
+          "bodyHeight": 800
+        },
+        "offBefore": {
+          "scrollHeight": 11467,
+          "scrollWidth": 1280,
+          "elements": 1565,
+          "bodyHeight": 800
+        },
+        "offAfter": {
+          "scrollHeight": 11467,
+          "scrollWidth": 1280,
+          "elements": 1565,
+          "bodyHeight": 800
+        }
+      },
+      "jsErrors": {
+        "windowCorrectionOff": 0,
+        "windowCorrectionOn": 0
+      },
+      "pixels": {
+        "stableFraction": 1,
+        "matchOfStable": 1,
+        "visiblyChangedOfStable": 0.043029296875
+      },
+      "removedCleanly": true,
+      "scroll": {
+        "off": {
+          "median": 16.699999999999818,
+          "p95": 16.800000000000182,
+          "long": 0
+        },
+        "on": {
+          "median": 16.69999999999891,
+          "p95": 16.700000000000728,
+          "long": 0
+        }
+      },
+      "result": "PASS"
+    },
+    {
+      "name": "chartjs-bar",
+      "category": "charts (canvas)",
+      "url": "https://www.chartjs.org/docs/latest/charts/bar.html",
+      "attempt": 1,
+      "status": 200,
+      "filterApplied": true,
+      "layoutUnchangedAroundToggle": true,
+      "layout": {
+        "onBefore": {
+          "scrollHeight": 10295,
+          "scrollWidth": 1280,
+          "elements": 1900,
+          "bodyHeight": 10295
+        },
+        "onAfter": {
+          "scrollHeight": 10295,
+          "scrollWidth": 1280,
+          "elements": 1900,
+          "bodyHeight": 10295
+        },
+        "offBefore": {
+          "scrollHeight": 10295,
+          "scrollWidth": 1280,
+          "elements": 1900,
+          "bodyHeight": 10295
+        },
+        "offAfter": {
+          "scrollHeight": 10295,
+          "scrollWidth": 1280,
+          "elements": 1900,
+          "bodyHeight": 10295
+        }
+      },
+      "jsErrors": {
+        "windowCorrectionOff": 0,
+        "windowCorrectionOn": 0
+      },
+      "pixels": {
+        "stableFraction": 1,
+        "matchOfStable": 1,
+        "visiblyChangedOfStable": 0.1043232421875
+      },
+      "removedCleanly": true,
+      "scroll": {
+        "off": {
+          "median": 16.699999999999818,
+          "p95": 16.700000000000728,
+          "long": 0
+        },
+        "on": {
+          "median": 16.69999999999891,
+          "p95": 16.700000000000728,
+          "long": 0
+        }
+      },
+      "result": "PASS"
+    },
+    {
+      "name": "d3-gallery",
+      "category": "charts (SVG)",
+      "url": "https://d3-graph-gallery.com/",
+      "attempt": 1,
+      "status": 200,
+      "filterApplied": true,
+      "layoutUnchangedAroundToggle": true,
+      "layout": {
+        "onBefore": {
+          "scrollHeight": 3727,
+          "scrollWidth": 1280,
+          "elements": 628,
+          "bodyHeight": 3727
+        },
+        "onAfter": {
+          "scrollHeight": 3727,
+          "scrollWidth": 1280,
+          "elements": 628,
+          "bodyHeight": 3727
+        },
+        "offBefore": {
+          "scrollHeight": 3727,
+          "scrollWidth": 1280,
+          "elements": 650,
+          "bodyHeight": 3727
+        },
+        "offAfter": {
+          "scrollHeight": 3727,
+          "scrollWidth": 1280,
+          "elements": 650,
+          "bodyHeight": 3727
+        }
+      },
+      "jsErrors": {
+        "windowCorrectionOff": 0,
+        "windowCorrectionOn": 0
+      },
+      "pixels": {
+        "stableFraction": 1,
+        "matchOfStable": 1,
+        "visiblyChangedOfStable": 0.0420966796875
+      },
+      "removedCleanly": true,
+      "scroll": {
+        "off": {
+          "median": 16.699999999999818,
+          "p95": 16.800000000000182,
+          "long": 0
+        },
+        "on": {
+          "median": 16.69999999999891,
+          "p95": 16.799999999999272,
+          "long": 0
+        }
+      },
+      "result": "PASS"
+    },
+    {
+      "name": "github-dark",
+      "category": "dark interface / complex CSS",
+      "url": "https://github.com/",
+      "attempt": 1,
+      "status": 200,
+      "filterApplied": true,
+      "layoutUnchangedAroundToggle": true,
+      "layout": {
+        "onBefore": {
+          "scrollHeight": 7596,
+          "scrollWidth": 1280,
+          "elements": 2268,
+          "bodyHeight": 7596
+        },
+        "onAfter": {
+          "scrollHeight": 7596,
+          "scrollWidth": 1280,
+          "elements": 2268,
+          "bodyHeight": 7596
+        },
+        "offBefore": {
+          "scrollHeight": 7596,
+          "scrollWidth": 1280,
+          "elements": 2268,
+          "bodyHeight": 7596
+        },
+        "offAfter": {
+          "scrollHeight": 7596,
+          "scrollWidth": 1280,
+          "elements": 2268,
+          "bodyHeight": 7596
+        }
+      },
+      "jsErrors": {
+        "windowCorrectionOff": 0,
+        "windowCorrectionOn": 0
+      },
+      "pixels": {
+        "stableFraction": 0.9536416015625,
+        "matchOfStable": 0.99900258978484,
+        "visiblyChangedOfStable": 0.015332877979046193
+      },
+      "removedCleanly": true,
+      "scroll": {
+        "off": {
+          "median": 16.699999999999818,
+          "p95": 16.799999999999272,
+          "long": 0
+        },
+        "on": {
+          "median": 16.69999999999891,
+          "p95": 16.700000000000728,
+          "long": 0
+        }
+      },
+      "result": "PASS"
+    },
+    {
+      "name": "wikipedia-dark",
+      "category": "dark interface",
+      "url": "https://en.wikipedia.org/wiki/Rainbow",
+      "attempt": 1,
+      "status": 200,
+      "filterApplied": true,
+      "layoutUnchangedAroundToggle": true,
+      "layout": {
+        "onBefore": {
+          "scrollHeight": 22657,
+          "scrollWidth": 1280,
+          "elements": 4801,
+          "bodyHeight": 800
+        },
+        "onAfter": {
+          "scrollHeight": 22657,
+          "scrollWidth": 1280,
+          "elements": 4801,
+          "bodyHeight": 800
+        },
+        "offBefore": {
+          "scrollHeight": 22657,
+          "scrollWidth": 1280,
+          "elements": 4801,
+          "bodyHeight": 800
+        },
+        "offAfter": {
+          "scrollHeight": 22657,
+          "scrollWidth": 1280,
+          "elements": 4801,
+          "bodyHeight": 800
+        }
+      },
+      "jsErrors": {
+        "windowCorrectionOff": 0,
+        "windowCorrectionOn": 0
+      },
+      "pixels": {
+        "stableFraction": 1,
+        "matchOfStable": 1,
+        "visiblyChangedOfStable": 0.08823828125
+      },
+      "removedCleanly": true,
+      "scroll": {
+        "off": {
+          "median": 16.699999999999818,
+          "p95": 16.799999999999272,
+          "long": 0
+        },
+        "on": {
+          "median": 16.69999999999891,
+          "p95": 16.799999999999272,
+          "long": 0
+        }
+      },
+      "result": "PASS"
+    }
+  ]
+}

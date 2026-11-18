@@ -1,0 +1,43 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Complex CSS</title>
+<style>
+html{scroll-behavior:auto}
+body{margin:0;font:15px system-ui,sans-serif;background:#fff;height:2600px}
+.fixed{position:fixed;right:16px;bottom:16px;width:120px;height:60px;background:#d62728;border-radius:10px;z-index:10}
+.sticky{position:sticky;top:0;background:#ffd54f;padding:10px;z-index:5}
+.grad{height:90px;background:radial-gradient(circle at 30% 50%,#2ca02c,#1f77b4 70%)}
+.conic{height:120px;width:120px;border-radius:50%;background:conic-gradient(#d62728,#ff7f0e,#2ca02c,#1f77b4,#d62728);margin:12px}
+.anim{width:100px;height:60px;background:#2ca02c;animation:pulse 2s infinite alternate}
+@keyframes pulse{from{background:#2ca02c;transform:scale(1)}to{background:#d62728;transform:scale(1.2)}}
+.hov{width:140px;height:50px;background:#1f77b4;transition:background .3s}.hov:hover{background:#d62728}
+.blend{background:#2ca02c;height:70px;width:200px;position:relative}.blend::after{content:'';position:absolute;inset:0;background:#d62728;mix-blend-mode:multiply;clip-path:polygon(0 0,60% 0,60% 100%,0 100%)}
+.tr{width:120px;height:60px;background:#8e24aa;transform:rotate(-8deg) translateX(20px)}
+.bf{width:200px;height:80px;background:linear-gradient(90deg,#e53935,#43a047);position:relative}
+.bf i{position:absolute;inset:20px 40px;backdrop-filter:blur(4px);background:#fff3}
+form{margin:10px}input,select,textarea{font:inherit}
+.row{display:flex;gap:12px;flex-wrap:wrap;padding:12px}
+</style></head><body>
+<div class="sticky" data-probe data-expect="#ffd54f">Sticky toolbar</div>
+<div class="grad" data-points="30:45,160:45,300:45"></div>
+<div class="row">
+<div class="conic" data-points="100:20,100:100,20:60,60:60"></div>
+<div class="anim" id="anim"></div>
+<div class="hov" id="hov" data-probe data-expect="#1f77b4"></div>
+<div class="blend" data-points="40:35,170:35"></div>
+<div class="tr" data-points="60:30"></div>
+<div class="bf" data-points="10:10,190:10"><i></i></div>
+</div>
+<form><label>Name <input id="name" value="Ada" style="background:#e8f5e9"></label>
+<select id="sel"><option>One</option><option>Two</option></select>
+<textarea id="ta" rows="2">hello</textarea>
+<button type="button" id="btn" style="background:#2e7d32;color:#fff;border:0;padding:6px 12px">Submit</button></form>
+<div id="host" style="width:140px;height:50px"></div>
+<script>
+const h=document.getElementById('host').attachShadow({mode:'open'});
+h.innerHTML='<div id="inner" style="width:140px;height:50px;background:#00897b"></div>';
+document.getElementById('host').dataset.points='10:25,100:25';
+let clicks=0;document.getElementById('btn').addEventListener('click',()=>{clicks++;document.title='clicked '+clicks});
+</script>
+<iframe id="fr" srcdoc="<body style='margin:0;background:#d62728'><div style='width:100px;height:60px;background:#2ca02c;margin:10px'></div></body>" width="200" height="90" data-points="5:5,50:40" style="border:0;display:block;margin:12px"></iframe>
+<div class="fixed" data-probe data-expect="#d62728"></div>
+<div style="margin-top:900px;height:60px;width:200px;background:#ff7f0e" id="far" data-probe data-expect="#ff7f0e"></div>
+</body></html>

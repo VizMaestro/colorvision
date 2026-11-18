@@ -1,0 +1,24 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Daily Ledger - News</title>
+<style>
+body{margin:0;font:16px/1.5 Georgia,serif;background:#fafafa;color:#222}
+header{background:#1d3557;color:#fff;padding:14px 24px;display:flex;justify-content:space-between;align-items:center}
+header b{font-size:26px} nav a{color:#fff;margin-left:16px;font:14px sans-serif}
+.breaking{background:#d62728;color:#fff;font:700 14px sans-serif;padding:8px 24px}
+main{max-width:900px;margin:16px auto;padding:0 16px;display:grid;grid-template-columns:2fr 1fr;gap:24px}
+h1{margin:0 0 8px;font-size:30px} a{color:#0b5cad}
+.up{color:#1a7f37}.down{color:#cf222e}
+.box{height:48px;border-radius:6px;margin:8px 0}
+table{border-collapse:collapse;width:100%;font:14px sans-serif} td,th{border-bottom:1px solid #ddd;padding:6px;text-align:left}
+</style></head><body>
+<header><b>Daily Ledger</b><nav><a href="#">World</a><a href="#">Business</a><a href="#">Sport</a></nav></header>
+<div class="breaking" data-probe data-expect="#d62728">BREAKING: markets move on rate news</div>
+<main><article>
+<h1>Markets close mixed as rates hold</h1>
+<p>Analysts said <a href="#">the decision</a> was widely expected. Gains in <span class="up">energy +2.4%</span> were offset by <span class="down">tech -1.8%</span>.</p>
+<div class="box" data-probe data-expect="#2ca02c" style="background:#2ca02c"></div>
+<div class="box" data-probe data-expect="#c0392b" style="background:#c0392b"></div>
+<div class="box" data-probe data-expect="#e0a100" style="background:#e0a100"></div>
+<table><tr><th>Index</th><th>Change</th></tr><tr><td>NX 100</td><td class="up">+0.9%</td></tr><tr><td>SMC 500</td><td class="down">-0.6%</td></tr></table>
+</article><aside><div class="box" data-probe data-expect="#1f77b4" style="background:#1f77b4;height:120px"></div>
+<div class="box" data-probe data-expect="#7a3fa0" style="background:#7a3fa0;height:120px"></div></aside></main>
+</body></html>

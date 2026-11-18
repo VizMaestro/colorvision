@@ -1,0 +1,25 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Media</title>
+<style>body{margin:16px;font:14px system-ui,sans-serif}.row{display:flex;gap:16px;flex-wrap:wrap}</style></head><body>
+<div class="row">
+<img id="img" width="120" height="80" alt="red-green image">
+<canvas id="cv" width="120" height="80"></canvas>
+<canvas id="gl" width="120" height="80"></canvas>
+<video id="vid" width="120" height="80" muted autoplay playsinline></video>
+</div>
+<script>
+(function(){
+  const c=document.createElement('canvas');c.width=120;c.height=80;const x=c.getContext('2d');
+  x.fillStyle='#d62728';x.fillRect(0,0,60,80);x.fillStyle='#2ca02c';x.fillRect(60,0,60,80);
+  document.getElementById('img').src=c.toDataURL();
+  const cv=document.getElementById('cv').getContext('2d');cv.fillStyle='#d62728';cv.fillRect(0,0,60,80);cv.fillStyle='#2ca02c';cv.fillRect(60,0,60,80);
+  const gl=document.getElementById('gl').getContext('webgl');
+  if(gl){gl.clearColor(0.84,0.15,0.16,1);gl.clear(gl.COLOR_BUFFER_BIT);window.__gl=true}
+  const src=document.createElement('canvas');src.width=120;src.height=80;const sx=src.getContext('2d');
+  const draw=()=>{sx.fillStyle='#d62728';sx.fillRect(0,0,60,80);sx.fillStyle='#2ca02c';sx.fillRect(60,0,60,80);requestAnimationFrame(draw)};draw();
+  const v=document.getElementById('vid');v.srcObject=src.captureStream(30);v.play().catch(()=>{});
+  document.getElementById('img').dataset.points='30:40,90:40';
+  document.getElementById('cv').dataset.points='30:40,90:40';
+  document.getElementById('gl').dataset.points='60:40';
+  v.dataset.points='30:40,90:40';
+})();
+</script></body></html>

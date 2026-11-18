@@ -1,0 +1,8 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Dark UI</title>
+<style>:root{color-scheme:dark}body{margin:0;background:#0f1117;color:#e6e8ee;font:15px system-ui,sans-serif}
+.panel{background:#171a23;margin:20px;padding:16px;border-radius:10px}
+.ok{background:#1f6f3f}.err{background:#8e2a2a}.warn{background:#8a6a12}
+.tag{display:inline-block;padding:4px 10px;border-radius:999px;margin:4px}</style></head><body>
+<div class="panel" data-probe data-expect="#171a23"><span class="tag ok" data-probe data-expect="#1f6f3f">passing</span><span class="tag err" data-probe data-expect="#8e2a2a">failing</span><span class="tag warn" data-probe data-expect="#8a6a12">flaky</span></div>
+<div class="panel" style="height:80px" data-probe data-expect="#171a23"></div>
+</body></html>

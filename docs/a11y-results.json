@@ -1,0 +1,101 @@
+{
+  "date": "2026-11-18T04:45:37.956Z",
+  "axeVersion": "axe-core (tags wcag2a, wcag2aa, wcag21a, wcag21aa, best-practice)",
+  "rows": [
+    {
+      "name": "axe: popup (light, 600px tall)",
+      "pass": true,
+      "detail": "0 violations"
+    },
+    {
+      "name": "axe: popup with simulation preview (light)",
+      "pass": true,
+      "detail": "0 violations"
+    },
+    {
+      "name": "popup at 600 px: master switch, status, profile and intensity are in the first screen",
+      "pass": true,
+      "detail": "{\"scrollHeight\":1014,\"profileBottom\":432.125,\"switchTop\":22.796875} (content scrolls beyond 600 px, as Chrome popups do)"
+    },
+    {
+      "name": "popup: every keyboard tab stop has a visible focus outline (≥2px)",
+      "pass": true,
+      "detail": "15 tab stops"
+    },
+    {
+      "name": "axe: popup (dark, 600px tall)",
+      "pass": true,
+      "detail": "0 violations"
+    },
+    {
+      "name": "axe: popup with simulation preview (dark)",
+      "pass": true,
+      "detail": "0 violations"
+    },
+    {
+      "name": "axe: calibration intro (light)",
+      "pass": true,
+      "detail": "0 violations"
+    },
+    {
+      "name": "axe: calibration threshold (light)",
+      "pass": true,
+      "detail": "0 violations"
+    },
+    {
+      "name": "axe: calibration comparison (light)",
+      "pass": true,
+      "detail": "0 violations"
+    },
+    {
+      "name": "axe: calibration natural-vs-enhanced (light)",
+      "pass": true,
+      "detail": "0 violations"
+    },
+    {
+      "name": "axe: calibration result (light)",
+      "pass": true,
+      "detail": "0 violations"
+    },
+    {
+      "name": "axe: calibration intro (dark)",
+      "pass": true,
+      "detail": "0 violations"
+    },
+    {
+      "name": "axe: calibration threshold (dark)",
+      "pass": true,
+      "detail": "0 violations"
+    },
+    {
+      "name": "axe: calibration comparison (dark)",
+      "pass": true,
+      "detail": "0 violations"
+    },
+    {
+      "name": "axe: calibration natural-vs-enhanced (dark)",
+      "pass": true,
+      "detail": "0 violations"
+    },
+    {
+      "name": "axe: calibration result (dark)",
+      "pass": true,
+      "detail": "0 violations"
+    },
+    {
+      "name": "calibration: complete flow with keyboard only (Tab, Space, Enter), result saved",
+      "pass": true,
+      "detail": "{\"completedAt\":1794977136570,\"family\":\"deutan\",\"mode\":\"natural\",\"severity\":0.27,\"strength\":0.25}"
+    },
+    {
+      "name": "closing the popup immediately after a switch change does not lose the change",
+      "pass": true,
+      "detail": "enabled=true"
+    },
+    {
+      "name": "closing the popup right after a slider change keeps the change (flush on pagehide)",
+      "pass": true,
+      "detail": "strength=0.61"
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "date": "2026-11-18T04:26:45.143Z",
+  "note": "headless, CPU raster, vsync + frame cap disabled; median of 3",
+  "rows": [
+    {
+      "name": "fixture: news (small static page)",
+      "fpsOff": 57.618651124063284,
+      "fpsOn": 57.57454738947083,
+      "ratio": 0.999234558016683
+    },
+    {
+      "name": "fixture: complex CSS (gradients, blend, backdrop-filter)",
+      "fpsOff": 25860.275982217743,
+      "fpsOn": 621.7788861180383,
+      "ratio": 0.02404378385387654
+    },
+    {
+      "name": "fixture: 20,000px page + 300 DOM inserts/s",
+      "fpsOff": 13737.087637454182,
+      "fpsOn": 10960.871883835931,
+      "ratio": 0.7979036148791178
+    },
+    {
+      "name": "real: Wikipedia long article",
+      "fpsOff": 7540.918030361293,
+      "fpsOn": 7352.843143965708,
+      "ratio": 0.9750594177475002
+    },
+    {
+      "name": "real: GitHub home",
+      "fpsOff": 1216.3423087370033,
+      "fpsOn": 876.0826115922719,
+      "ratio": 0.7202599180340588
+    }
+  ]
+}

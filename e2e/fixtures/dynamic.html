@@ -1,0 +1,16 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Dynamic content</title>
+<style>body{margin:0;font:14px system-ui,sans-serif}#list div{height:36px;padding:8px;border-bottom:1px solid #ddd}.sw{display:inline-block;width:30px;height:20px;vertical-align:middle;margin-right:8px}</style></head><body>
+<div id="list"></div>
+<script>
+const list=document.getElementById('list');
+let n=0;
+function addRow(color){const d=document.createElement('div');d.innerHTML='<span class="sw" style="background:'+color+'"></span>Item '+(++n);list.appendChild(d);return d}
+// Content that arrives later and keeps arriving (mutation stress).
+setTimeout(()=>{const d=addRow('#d62728');d.id='late';d.firstChild.dataset.probe='1';d.firstChild.dataset.expect='#d62728';},400);
+window.startStress=function(){
+  window.__stress=setInterval(()=>{ for(let i=0;i<10;i++) addRow(['#2ca02c','#d62728','#1f77b4','#ff7f0e'][n%4]); if(list.children.length>3000){ list.textContent=''; } },30);
+};
+window.stopStress=function(){clearInterval(window.__stress)};
+// Long document for scroll tests
+const pad=document.createElement('div');pad.style.height='20000px';pad.style.background='linear-gradient(#fff,#ccc)';document.body.appendChild(pad);
+</script></body></html>

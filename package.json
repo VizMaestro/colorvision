@@ -1,0 +1,35 @@
+{
+  "name": "colorvision",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "ColorVision - personalized color distinguishability enhancement for people with color vision deficiencies",
+  "scripts": {
+    "dev": "vite build --watch",
+    "icons": "node scripts/make-icons.mjs",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "build": "npm run typecheck && vite build && vite build -c vite.content.config.ts",
+    "e2e:perf": "esbuild e2e/perf.ts --bundle --platform=node --format=esm --packages=external --outfile=e2e/.build/perf.mjs --log-level=warning && node e2e/.build/perf.mjs",
+    "e2e:a11y": "esbuild e2e/a11y.ts --bundle --platform=node --format=esm --packages=external --outfile=e2e/.build/a11y.mjs --log-level=warning && node e2e/.build/a11y.mjs",
+    "e2e:sites": "esbuild e2e/sites.ts --bundle --platform=node --format=esm --packages=external --outfile=e2e/.build/sites.mjs --log-level=warning && node e2e/.build/sites.mjs",
+    "e2e": "esbuild e2e/run.ts --bundle --platform=node --format=esm --packages=external --outfile=e2e/.build/run.mjs --log-level=warning && node e2e/.build/run.mjs",
+    "package": "npm run build && node scripts/package.mjs"
+  },
+  "dependencies": {
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@types/chrome": "^0.1.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "@vitejs/plugin-react": "^5.0.0",
+    "axe-core": "^4.14.1",
+    "jsdom": "^26.0.0",
+    "playwright": "^1.50.0",
+    "typescript": "^5.7.0",
+    "vite": "^7.0.0",
+    "vitest": "^3.0.0"
+  }
+}

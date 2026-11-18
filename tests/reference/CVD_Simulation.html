@@ -1,0 +1,1199 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="content-type" content="application/xhtml+xml; charset=UTF-8" />
+    <meta content="We present a physiologically-based model
+  for simulating color perception. Our model is based on the stage theory of  human color vision and is derived from data reported in electrophysiological
+  studies. It is the first model to consistently handle normal color vision,  anomalous trichromacy, and dichromacy in a unified way."
+      name="description" />
+    <meta content="Models of Color Vision,Color Perception,Simulation of Color Vision Deficiency,Anomalous Trichromacy,Dichromacy"
+      name="keywords" />
+    <link href="A%20Physiologically-based%20Model%20for%20Simulation%20of%20Color%20Vision%20Deficiency_files/global.css"
+      type="text/css" rel="stylesheet" />
+    <link href="A%20Physiologically-based%20Model%20for%20Simulation%20of%20Color%20Vision%20Deficiency_files/project.css"
+      type="text/css" rel="stylesheet" />
+    <title>A Physiologically-based Model for Simulation of Color Vision
+      Deficiency</title>
+  </head>
+  <body>
+    <center>
+      <!-- === Teaser ===================== -->
+      <table id="teaser">
+        <tbody>
+          <tr>
+            <td>
+              <div class="img-shadow"><img src="A%20Physiologically-based%20Model%20for%20Simulation%20of%20Color%20Vision%20Deficiency_files/flower.jpg"
+                  alt="" class="photo-frame" /></div>
+            </td>
+            <td>
+              <div class="img-shadow"><img src="A%20Physiologically-based%20Model%20for%20Simulation%20of%20Color%20Vision%20Deficiency_files/flower-Gmm-degree-02-Deuteranomaly.jpg"
+                  alt="" class="photo-frame" /></div>
+            </td>
+            <td>
+              <div class="img-shadow"><img src="A%20Physiologically-based%20Model%20for%20Simulation%20of%20Color%20Vision%20Deficiency_files/flower-Gmm-degree-04-Deuteranomaly.jpg"
+                  alt="" class="photo-frame" /></div>
+            </td>
+            <td>
+              <div class="img-shadow"><img src="A%20Physiologically-based%20Model%20for%20Simulation%20of%20Color%20Vision%20Deficiency_files/flower-Gmm-degree-06-Deuteranomaly.jpg"
+                  alt="" class="photo-frame" /></div>
+            </td>
+            <td>
+              <div class="img-shadow"><img src="A%20Physiologically-based%20Model%20for%20Simulation%20of%20Color%20Vision%20Deficiency_files/flower-Gmm-degree-08-Deuteranomaly.jpg"
+                  alt="" class="photo-frame" /></div>
+            </td>
+            <td>
+              <div class="img-shadow"><img src="A%20Physiologically-based%20Model%20for%20Simulation%20of%20Color%20Vision%20Deficiency_files/flower-Gmm-degree-10-Deuteranomaly.jpg"
+                  alt="" class="photo-frame" /></div>
+            </td>
+          </tr>
+          <tr>
+            <td>Reference Image</td>
+            <td>Deuteranomaly (4 nm)</td>
+            <td>Deuteranomaly (8 nm)</td>
+            <td>Deuteranomaly (12 nm)</td>
+            <td>Deuteranomaly (16 nm)</td>
+            <td>Deuteranopia</td>
+          </tr>
+        </tbody>
+      </table>
+      <!-- === Title ===================== -->
+      <div id="title">A Physiologically-based Model for Simulation of Color
+        Vision Deficiency</div>
+      <!-- === Authors ===================== -->
+      <table id="authors">
+        <tbody>
+          <tr>
+            <!-- Author #0 -->
+            <td class="author"> <span class="author-name">Gustavo M. Machado</span><br />
+              <a href="mailto:gmmachado@inf.ufrgs.br" class="author-email">gmmachado@inf.ufrgs.br</a>
+            </td>
+            <td class="author-separator"><br />
+            </td>
+            <!-- Author #1 -->
+            <td class="author"> <span class="author-name">Manuel M. Oliveira</span><br />
+              <a href="mailto:oliveira@inf.ufrgs.br" class="author-email">oliveira@inf.ufrgs.br</a>
+            </td>
+            <td class="author-separator"><br />
+            </td>
+            <!-- Author #2 -->
+            <td class="author"> <span class="author-name">Leandro A. F.
+                Fernandes</span><br />
+              <a href="mailto:laffernandes@inf.ufrgs.br" class="author-email">laffernandes@inf.ufrgs.br</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <br />
+      <div class="institution">Instituto de Informática, UFRGS</div>
+    </center>
+    <br />
+    <!-- === Logos ===================== -->
+    <center> <a href="http://www.inf.ufrgs.br/"><img alt="Logo INF" src="http://www.inf.ufrgs.br/%7Eoliveira/pubs_files/inf.png"
+          style="margin-right: 4em;" id="logo-inf" /></a>
+      <!--<div class="drop-shadow">--> <a href="http://www.ufrgs.br/"><img alt="Logo UFRGS"
+          src="http://www.inf.ufrgs.br/%7Eoliveira/pubs_files/ufrgs.png" id="logo-ufrgs" /></a>
+      <!--</div>--> </center>
+    <br />
+    <!-- === Publication info ===================== -->
+    <p id="publication-info"> <b>IEEE Transactions on Visualization and
+        Computer Graphics.</b><br />
+      Volume 15 (2009), Number 6, pp. 1291-1298. [<a href="http://doi.ieeecomputersociety.org/10.1109/TVCG.2009.113">DOI</a>]
+    </p>
+    <!-- === TOC ===================== --> <br />
+    <h2>Contents</h2>
+    <table width="100%" style="text-align: center;">
+      <tbody>
+        <tr>
+          <td width="16%"><a href="#Abstract">Abstract</a></td>
+          <td width="13%"><a href="#Downloads">Downloads</a></td>
+          <td width="13%"><a href="#Errata">Errata</a></td>
+          <td width="13%"><a href="#Results">Results</a></td>
+          <td width="13%"><a href="#Tutorial">Tutorial</a></td>
+          <td width="13%"><a href="#Reference">Reference</a></td>
+          <td width="20%"><a href="#Acknowledgments">Acknowledgments</a></td>
+        </tr>
+      </tbody>
+    </table>
+    <!-- === Section: Abstract ===================== -->
+    <div class="h1-shadow-0">
+      <div class="h1-shadow-1">
+        <div class="h1-shadow-2">
+          <h1 id="Abstract">Abstract</h1>
+        </div>
+      </div>
+    </div>
+    <p id="abstract">
+      Color vision deficiency (CVD) affects approximately 200 million people
+      worldwide, compromising the ability of these individuals to effectively
+      perform color and visualization-related tasks. This has a significant
+      impact on their private and professional lives. We present a
+      physiologically-based model for simulating color perception. Our model
+      is based on the stage theory of human color vision and is derived from
+      data reported in electrophysiological studies. It is the first model to
+      consistently handle normal color vision, anomalous trichromacy, and
+      dichromacy in a unified way. We have validated the proposed model
+      through an experimental evaluation involving groups of color vision
+      deficient individuals and normal color vision ones. Our model can
+      provide insights and feedback on how to improve visualization
+      experiences for individuals with CVD. It also provides a framework for
+      testing hypotheses about some aspects of the retinal photoreceptors in
+      color vision deficient individuals. </p>
+    <!-- === Section: Downloads ===================== -->
+    <div class="h1-shadow-0">
+      <div class="h1-shadow-1">
+        <div class="h1-shadow-2">
+          <h1 id="Downloads">Downloads</h1>
+        </div>
+      </div>
+    </div>
+    <table align="center" class="downloads">
+      <tbody>
+        <tr>
+          <td> <a href="http://www.inf.ufrgs.br/%7Eoliveira/pubs_files/CVD_Simulation/Machado_Oliveira_Fernandes_CVD_Vis2009_final.pdf"><img
+                src="http://www.inf.ufrgs.br/%7Eoliveira/pubs_files/pdf.png" alt="" /></a>
+            <a href="http://www.inf.ufrgs.br/%7Eoliveira/pubs_files/CVD_Simulation/Machado_Oliveira_Fernandes_CVD_Vis2009_final.pdf">Full
+              paper (with correct Eqs. (17) and (18))</a> </td>
+        </tr>
+      </tbody>
+    </table>
+    <!-- === Section: Errata ===================== -->
+    <div class="h1-shadow-0">
+      <div class="h1-shadow-1">
+        <div class="h1-shadow-2">
+          <h1 id="Errata">Errata</h1>
+        </div>
+      </div>
+    </div>
+    <p>There
+      is a typo in Eqs (17) e (18) of our Vis 2009 paper (page 1295 of the
+      conference proceedings). Factors that should be multiplying the last
+      term inside parenthesis, happen to appear outside the parenthesis. We
+      would like to point out that the images shown in the paper and the
+      matrices provided as supplementary material are correct (they were
+      computed using the correct version of Eqs. 17 e 18). The error happened
+      during the typing of the paper. The correct equations can be seen below:</p>
+    <center><img class="equation_highlight" src="A%20Physiologically-based%20Model%20for%20Simulation%20of%20Color%20Vision%20Deficiency_files/correct_equations_17_18.png"
+        alt="" /></center>
+    <!-- === Section: Results ===================== -->
+    <div class="h1-shadow-0">
+      <div class="h1-shadow-1">
+        <div class="h1-shadow-2">
+          <h1 id="Results">Results</h1>
+        </div>
+      </div>
+    </div>
+    <h2>Video</h2>
+    <br />
+    <center>
+	
+	<iframe src="https://player.vimeo.com/video/12140049" width="640" height="478" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+
+    </center>
+    <h2>Images</h2>
+    <p>The
+      images below ilustrate examples of how colors can be confused for
+      individuals with CVD. A set of scientific visualization and information
+      visualization images simulating for normal trichromats the perception
+      of protanomalous and deuteranomalous with severities of 2 nm, 8 nm, 14
+      nm, and the perception of dichromats which is equivalent to anomalous
+      trichromacy with severity of 20 nm.</p>
+    <center>
+      <table class="images non-portable-drop-shadow">
+        <tbody>
+          <tr>
+            <th align="center" scope="col">
+              <div align="right" style="">Type</div>
+            </th>
+            <th align="center" scope="col">Normal<br />
+              color vision</th>
+            <th align="center" scope="col">2 nm</th>
+            <th align="center" scope="col">8 nm</th>
+            <th align="center" scope="col">14 nm</th>
+            <th align="center" scope="col">Dichromacy</th>
+          </tr>
+          <tr>
+            <th scope="row">
+              <div align="right">Prot</div>
+            </th>
+            <td><img src="A%20Physiologically-based%20Model%20for%20Simulation%20of%20Color%20Vision%20Deficiency_files/brain_chico_crop.jpg"
+                alt="" /></td>
+            <td><img src="A%20Physiologically-based%20Model%20for%20Simulation%20of%20Color%20Vision%20Deficiency_files/brain_chico_crop_InS_Simulation_degree_02_Protanomaly.jpg"
+                alt="" /></td>
+            <td><img src="A%20Physiologically-based%20Model%20for%20Simulation%20of%20Color%20Vision%20Deficiency_files/brain_chico_crop_InS_Simulation_degree_08_Protanomaly.jpg"
+                alt="" /></td>
+            <td><img src="A%20Physiologically-based%20Model%20for%20Simulation%20of%20Color%20Vision%20Deficiency_files/brain_chico_crop_InS_Simulation_degree_14_Protanomaly.jpg"
+                alt="" /></td>
+            <td><img src="A%20Physiologically-based%20Model%20for%20Simulation%20of%20Color%20Vision%20Deficiency_files/brain_chico_crop_InS_Simulation_degree_20_Protanomaly.jpg"
+                alt="" /></td>
+          </tr>
+          <tr>
+            <th scope="row">
+              <div align="right">Deut</div>
+            </th>
+            <td><img src="A%20Physiologically-based%20Model%20for%20Simulation%20of%20Color%20Vision%20Deficiency_files/brain_chico_crop.jpg"
+                alt="" /></td>
+            <td><img src="A%20Physiologically-based%20Model%20for%20Simulation%20of%20Color%20Vision%20Deficiency_files/brain_chico_crop_InS_Simulation_degree_02_Deuteranomaly.jpg"
+                alt="" /></td>
+            <td><img src="A%20Physiologically-based%20Model%20for%20Simulation%20of%20Color%20Vision%20Deficiency_files/brain_chico_crop_InS_Simulation_degree_08_Deuteranomaly.jpg"
+                alt="" /></td>
+            <td><img src="A%20Physiologically-based%20Model%20for%20Simulation%20of%20Color%20Vision%20Deficiency_files/brain_chico_crop_InS_Simulation_degree_14_Deuteranomaly.jpg"
+                alt="" /></td>
+            <td><img src="A%20Physiologically-based%20Model%20for%20Simulation%20of%20Color%20Vision%20Deficiency_files/brain_chico_crop_InS_Simulation_degree_20_Deuteranomaly.jpg"
+                alt="" /></td>
+          </tr>
+          <tr>
+            <th scope="row">
+              <div align="right">Prot</div>
+            </th>
+            <td><img src="A%20Physiologically-based%20Model%20for%20Simulation%20of%20Color%20Vision%20Deficiency_files/the_cats_eye_nebula_crop.jpg"
+                alt="" /></td>
+            <td><img src="A%20Physiologically-based%20Model%20for%20Simulation%20of%20Color%20Vision%20Deficiency_files/the_cats_eye_nebula_crop_InS_Simulation_degree_02_Protanomal.jpg"
+                alt="" /></td>
+            <td><img src="A%20Physiologically-based%20Model%20for%20Simulation%20of%20Color%20Vision%20Deficiency_files/the_cats_eye_nebula_crop_InS_Simulation_degree_08_Protanomal.jpg"
+                alt="" /></td>
+            <td><img src="A%20Physiologically-based%20Model%20for%20Simulation%20of%20Color%20Vision%20Deficiency_files/the_cats_eye_nebula_crop_InS_Simulation_degree_14_Protanomal.jpg"
+                alt="" /></td>
+            <td><img src="A%20Physiologically-based%20Model%20for%20Simulation%20of%20Color%20Vision%20Deficiency_files/the_cats_eye_nebula_crop_InS_Simulation_degree_20_Protanomal.jpg"
+                alt="" /></td>
+          </tr>
+          <tr>
+            <th scope="row">
+              <div align="right">Deut</div>
+            </th>
+            <td><img src="A%20Physiologically-based%20Model%20for%20Simulation%20of%20Color%20Vision%20Deficiency_files/the_cats_eye_nebula_crop.jpg"
+                alt="" /></td>
+            <td><img src="A%20Physiologically-based%20Model%20for%20Simulation%20of%20Color%20Vision%20Deficiency_files/the_cats_eye_nebula_crop_InS_Simulation_degree_02_Deuteranom.jpg"
+                alt="" /></td>
+            <td><img src="A%20Physiologically-based%20Model%20for%20Simulation%20of%20Color%20Vision%20Deficiency_files/the_cats_eye_nebula_crop_InS_Simulation_degree_08_Deuteranom.jpg"
+                alt="" /></td>
+            <td><img src="A%20Physiologically-based%20Model%20for%20Simulation%20of%20Color%20Vision%20Deficiency_files/the_cats_eye_nebula_crop_InS_Simulation_degree_14_Deuteranom.jpg"
+                alt="" /></td>
+            <td><img src="A%20Physiologically-based%20Model%20for%20Simulation%20of%20Color%20Vision%20Deficiency_files/the_cats_eye_nebula_crop_InS_Simulation_degree_20_Deuteranom.jpg"
+                alt="" /></td>
+          </tr>
+          <!--<tr>-->
+          <!--<th scope="row"><div align="right">Prot</div></th>-->
+          <!--<td><img alt="" src="images/results/tornado_1.jpg" /></td>-->
+          <!--<td><img alt="" src="images/results/tornado_1_InS_Simulation_degree_02_Protanomaly.jpg" /></td>-->
+          <!--<td><img alt="" src="images/results/tornado_1_InS_Simulation_degree_08_Protanomaly.jpg" /></td>-->
+          <!--<td><img alt="" src="images/results/tornado_1_InS_Simulation_degree_14_Protanomaly.jpg" /></td>-->
+          <!--<td><img alt="" src="images/results/tornado_1_InS_Simulation_degree_20_Protanomaly.jpg" /></td>-->
+          <!--</tr>-->
+          <!--<tr>-->
+          <!--<th scope="row"><div align="right">Deut</div></th>-->
+          <!--<td><img alt="" src="images/results/tornado_1.jpg" /></td>-->
+          <!--<td><img alt="" src="images/results/tornado_1_InS_Simulation_degree_02_Deuteranomaly.jpg" /></td>-->
+          <!--<td><img alt="" src="images/results/tornado_1_InS_Simulation_degree_08_Deuteranomaly.jpg" /></td>-->
+          <!--<td><img alt="" src="images/results/tornado_1_InS_Simulation_degree_14_Deuteranomaly.jpg" /></td>-->
+          <!--<td><img alt="" src="images/results/tornado_1_InS_Simulation_degree_20_Deuteranomaly.jpg" /></td>-->
+          <!--</tr>-->
+          <tr>
+            <th scope="row">
+              <div align="right">Prot</div>
+            </th>
+            <td><img src="A%20Physiologically-based%20Model%20for%20Simulation%20of%20Color%20Vision%20Deficiency_files/bubonic_plague.jpg"
+                alt="" /></td>
+            <td><img src="A%20Physiologically-based%20Model%20for%20Simulation%20of%20Color%20Vision%20Deficiency_files/bubonic_plague_InS_Simulation_degree_02_Protanomaly.jpg"
+                alt="" /></td>
+            <td><img src="A%20Physiologically-based%20Model%20for%20Simulation%20of%20Color%20Vision%20Deficiency_files/bubonic_plague_InS_Simulation_degree_08_Protanomaly.jpg"
+                alt="" /></td>
+            <td><img src="A%20Physiologically-based%20Model%20for%20Simulation%20of%20Color%20Vision%20Deficiency_files/bubonic_plague_InS_Simulation_degree_14_Protanomaly.jpg"
+                alt="" /></td>
+            <td><img src="A%20Physiologically-based%20Model%20for%20Simulation%20of%20Color%20Vision%20Deficiency_files/bubonic_plague_InS_Simulation_degree_20_Protanomaly.jpg"
+                alt="" /></td>
+          </tr>
+          <tr>
+            <th scope="row">
+              <div align="right">Deut</div>
+            </th>
+            <td><img src="A%20Physiologically-based%20Model%20for%20Simulation%20of%20Color%20Vision%20Deficiency_files/bubonic_plague.jpg"
+                alt="" /></td>
+            <td><img src="A%20Physiologically-based%20Model%20for%20Simulation%20of%20Color%20Vision%20Deficiency_files/bubonic_plague_InS_Simulation_degree_02_Deuteranomaly.jpg"
+                alt="" /></td>
+            <td><img src="A%20Physiologically-based%20Model%20for%20Simulation%20of%20Color%20Vision%20Deficiency_files/bubonic_plague_InS_Simulation_degree_08_Deuteranomaly.jpg"
+                alt="" /></td>
+            <td><img src="A%20Physiologically-based%20Model%20for%20Simulation%20of%20Color%20Vision%20Deficiency_files/bubonic_plague_InS_Simulation_degree_14_Deuteranomaly.jpg"
+                alt="" /></td>
+            <td><img src="A%20Physiologically-based%20Model%20for%20Simulation%20of%20Color%20Vision%20Deficiency_files/bubonic_plague_InS_Simulation_degree_20_Deuteranomaly.jpg"
+                alt="" /></td>
+          </tr>
+        </tbody>
+      </table>
+    </center>
+    <!-- === Section: Tutorial===================== -->
+    <div class="h1-shadow-0">
+      <div class="h1-shadow-1">
+        <div class="h1-shadow-2">
+          <h1 id="Tutorial">Tutorial</h1>
+        </div>
+      </div>
+    </div>
+    <p>Individuals
+      with color vision deficiency (CVD) represents approximately 200 million
+      of people worldwide. It has, in most of the cases, genetic cause and
+      there is no cure or treatment for those individuals. Thus,
+      understanding how is color perceived by those individuals is of high
+      relevance. In this tutorial we explain how to use this model to
+      simulate the perception of individuals with CVD.</p>
+    <p>According to this model the simulation of the perception of indivuduals
+      with CVD is given by a single matrix multiplication ?<sub>CVD</sub> as in
+      Eq. 1 below. The RGB vector on the right represents the reference RGB
+      color, which is multiplied by the matrix ?<sub>CVD</sub> to compute the
+      simulated color R<sub>S</sub>G<sub>S</sub>B<sub>S</sub>.</p>
+    <table align="center">
+      <tbody>
+        <tr>
+          <td width="190"><img src="A%20Physiologically-based%20Model%20for%20Simulation%20of%20Color%20Vision%20Deficiency_files/simulation_equation.png"
+              alt="" /></td>
+          <td width="117" align="right">(1)</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>This
+      matrix can be computed for all severities of protanomaly,
+      deuteranomaly, and tritanomaly. Aiming efficiency, one can pre-compute
+      the matrices for many serverities and use them in the application
+      allowing to switching between many severities and types of CVDs. Table
+      1 contains a set of pre-computed matrices for severities in the range
+      [0.0,1.0] where 1.0 represents the highest severity or a case of
+      dichromacy, and 0.0 represents absence of CVD.</p>
+    <p>The matrices
+      in Table 1 were computed for severities growing with a step of 0.1. If
+      you want to simulate colors with higher precision severities values,
+      for example, a severity of 0.873, you can use the model in the article
+      to compute the specified matrix. This is the most accurate approach,
+      but it is also possible to interpolate between the two matrices with
+      nearest severities. For example, to compute the matrix for a case of
+      severity 0.873, the matrices 0.8 and 0.9 can be interpolated with a
+      weight of 0.73. This approach is a fast approximation and also very
+      accurate for a set of pre-computed matrices with severity step of 0.1.</p>
+    <table cellpadding="5mm" align="center" style="border-collapse: collapse;">
+      <caption style="font-size: small; margin-bottom: 0.25em;">Table 1:
+        Simulation matrices ?<sub>CVD</sub></caption>
+      <tbody>
+        <tr style="border-top: 2px solid rgb(51, 51, 51); border-bottom: 1px solid rgb(51, 51, 51);">
+          <td>
+            <div align="center">Severity</div>
+          </td>
+          <td>
+            <div align="center">Protanomaly</div>
+          </td>
+          <td>
+            <div align="center">Deuteranomaly</div>
+          </td>
+          <td>
+            <div align="center">Tritanomaly</div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div align="center">0.0</div>
+          </td>
+          <td>
+            <table bgcolor="#e2ebf6" align="center">
+              <tbody>
+                <tr>
+                  <td>1.000000</td>
+                  <td>0.000000</td>
+                  <td>-0.000000</td>
+                </tr>
+                <tr>
+                  <td>0.000000</td>
+                  <td>1.000000</td>
+                  <td>0.000000</td>
+                </tr>
+                <tr>
+                  <td>-0.000000</td>
+                  <td>-0.000000</td>
+                  <td>1.000000</td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+          <td>
+            <table bgcolor="#e2ebf6" align="center">
+              <tbody>
+                <tr>
+                  <td>1.000000</td>
+                  <td>0.000000</td>
+                  <td>-0.000000</td>
+                </tr>
+                <tr>
+                  <td>0.000000</td>
+                  <td>1.000000</td>
+                  <td>0.000000</td>
+                </tr>
+                <tr>
+                  <td>-0.000000</td>
+                  <td>-0.000000</td>
+                  <td>1.000000</td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+          <td>
+            <table bgcolor="#e2ebf6" align="center">
+              <tbody>
+                <tr>
+                  <td>1.000000</td>
+                  <td>0.000000</td>
+                  <td>-0.000000</td>
+                </tr>
+                <tr>
+                  <td>0.000000</td>
+                  <td>1.000000</td>
+                  <td>0.000000</td>
+                </tr>
+                <tr>
+                  <td>-0.000000</td>
+                  <td>-0.000000</td>
+                  <td>1.000000</td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div align="center">0.1</div>
+          </td>
+          <td>
+            <table bgcolor="#e2ebf6" align="center">
+              <tbody>
+                <tr>
+                  <td>0.856167</td>
+                  <td>0.182038</td>
+                  <td>-0.038205</td>
+                </tr>
+                <tr>
+                  <td>0.029342</td>
+                  <td>0.955115</td>
+                  <td>0.015544</td>
+                </tr>
+                <tr>
+                  <td>-0.002880</td>
+                  <td>-0.001563</td>
+                  <td>1.004443</td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+          <td>
+            <table bgcolor="#e2ebf6" align="center">
+              <tbody>
+                <tr>
+                  <td>0.866435</td>
+                  <td>0.177704</td>
+                  <td>-0.044139</td>
+                </tr>
+                <tr>
+                  <td>0.049567</td>
+                  <td>0.939063</td>
+                  <td>0.011370</td>
+                </tr>
+                <tr>
+                  <td>-0.003453</td>
+                  <td>0.007233</td>
+                  <td>0.996220</td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+          <td>
+            <table bgcolor="#e2ebf6" align="center">
+              <tbody>
+                <tr>
+                  <td>0.926670</td>
+                  <td>0.092514</td>
+                  <td>-0.019184</td>
+                </tr>
+                <tr>
+                  <td>0.021191</td>
+                  <td>0.964503</td>
+                  <td>0.014306</td>
+                </tr>
+                <tr>
+                  <td>0.008437</td>
+                  <td>0.054813</td>
+                  <td>0.936750</td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div align="center">0.2</div>
+          </td>
+          <td>
+            <table bgcolor="#e2ebf6" align="center">
+              <tbody>
+                <tr>
+                  <td>0.734766</td>
+                  <td>0.334872</td>
+                  <td>-0.069637</td>
+                </tr>
+                <tr>
+                  <td>0.051840</td>
+                  <td>0.919198</td>
+                  <td>0.028963</td>
+                </tr>
+                <tr>
+                  <td>-0.004928</td>
+                  <td>-0.004209</td>
+                  <td>1.009137</td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+          <td>
+            <table bgcolor="#e2ebf6" align="center">
+              <tbody>
+                <tr>
+                  <td>0.760729</td>
+                  <td>0.319078</td>
+                  <td>-0.079807</td>
+                </tr>
+                <tr>
+                  <td>0.090568</td>
+                  <td>0.889315</td>
+                  <td>0.020117</td>
+                </tr>
+                <tr>
+                  <td>-0.006027</td>
+                  <td>0.013325</td>
+                  <td>0.992702</td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+          <td>
+            <table bgcolor="#e2ebf6" align="center">
+              <tbody>
+                <tr>
+                  <td>0.895720</td>
+                  <td>0.133330</td>
+                  <td>-0.029050</td>
+                </tr>
+                <tr>
+                  <td>0.029997</td>
+                  <td>0.945400</td>
+                  <td>0.024603</td>
+                </tr>
+                <tr>
+                  <td>0.013027</td>
+                  <td>0.104707</td>
+                  <td>0.882266</td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div align="center">0.3</div>
+          </td>
+          <td>
+            <table bgcolor="#e2ebf6" align="center">
+              <tbody>
+                <tr>
+                  <td>0.630323</td>
+                  <td>0.465641</td>
+                  <td>-0.095964</td>
+                </tr>
+                <tr>
+                  <td>0.069181</td>
+                  <td>0.890046</td>
+                  <td>0.040773</td>
+                </tr>
+                <tr>
+                  <td>-0.006308</td>
+                  <td>-0.007724</td>
+                  <td>1.014032</td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+          <td>
+            <table bgcolor="#e2ebf6" align="center">
+              <tbody>
+                <tr>
+                  <td>0.675425</td>
+                  <td>0.433850</td>
+                  <td>-0.109275</td>
+                </tr>
+                <tr>
+                  <td>0.125303</td>
+                  <td>0.847755</td>
+                  <td>0.026942</td>
+                </tr>
+                <tr>
+                  <td>-0.007950</td>
+                  <td>0.018572</td>
+                  <td>0.989378</td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+          <td>
+            <table bgcolor="#e2ebf6" align="center">
+              <tbody>
+                <tr>
+                  <td>0.905871</td>
+                  <td>0.127791</td>
+                  <td>-0.033662</td>
+                </tr>
+                <tr>
+                  <td>0.026856</td>
+                  <td>0.941251</td>
+                  <td>0.031893</td>
+                </tr>
+                <tr>
+                  <td>0.013410</td>
+                  <td>0.148296</td>
+                  <td>0.838294</td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div align="center">0.4</div>
+          </td>
+          <td>
+            <table bgcolor="#e2ebf6" align="center">
+              <tbody>
+                <tr>
+                  <td>0.539009</td>
+                  <td>0.579343</td>
+                  <td>-0.118352</td>
+                </tr>
+                <tr>
+                  <td>0.082546</td>
+                  <td>0.866121</td>
+                  <td>0.051332</td>
+                </tr>
+                <tr>
+                  <td>-0.007136</td>
+                  <td>-0.011959</td>
+                  <td>1.019095</td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+          <td>
+            <table bgcolor="#e2ebf6" align="center">
+              <tbody>
+                <tr>
+                  <td>0.605511</td>
+                  <td>0.528560</td>
+                  <td>-0.134071</td>
+                </tr>
+                <tr>
+                  <td>0.155318</td>
+                  <td>0.812366</td>
+                  <td>0.032316</td>
+                </tr>
+                <tr>
+                  <td>-0.009376</td>
+                  <td>0.023176</td>
+                  <td>0.986200</td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+          <td>
+            <table bgcolor="#e2ebf6" align="center">
+              <tbody>
+                <tr>
+                  <td>0.948035</td>
+                  <td>0.089490</td>
+                  <td>-0.037526</td>
+                </tr>
+                <tr>
+                  <td>0.014364</td>
+                  <td>0.946792</td>
+                  <td>0.038844</td>
+                </tr>
+                <tr>
+                  <td>0.010853</td>
+                  <td>0.193991</td>
+                  <td>0.795156</td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div align="center">0.5</div>
+          </td>
+          <td>
+            <table bgcolor="#e2ebf6" align="center">
+              <tbody>
+                <tr>
+                  <td>0.458064</td>
+                  <td>0.679578</td>
+                  <td>-0.137642</td>
+                </tr>
+                <tr>
+                  <td>0.092785</td>
+                  <td>0.846313</td>
+                  <td>0.060902</td>
+                </tr>
+                <tr>
+                  <td>-0.007494</td>
+                  <td>-0.016807</td>
+                  <td>1.024301</td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+          <td>
+            <table bgcolor="#e2ebf6" align="center">
+              <tbody>
+                <tr>
+                  <td>0.547494</td>
+                  <td>0.607765</td>
+                  <td>-0.155259</td>
+                </tr>
+                <tr>
+                  <td>0.181692</td>
+                  <td>0.781742</td>
+                  <td>0.036566</td>
+                </tr>
+                <tr>
+                  <td>-0.010410</td>
+                  <td>0.027275</td>
+                  <td>0.983136</td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+          <td>
+            <table bgcolor="#e2ebf6" align="center">
+              <tbody>
+                <tr>
+                  <td>1.017277</td>
+                  <td>0.027029</td>
+                  <td>-0.044306</td>
+                </tr>
+                <tr>
+                  <td>-0.006113</td>
+                  <td>0.958479</td>
+                  <td>0.047634</td>
+                </tr>
+                <tr>
+                  <td>0.006379</td>
+                  <td>0.248708</td>
+                  <td>0.744913</td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div align="center">0.6</div>
+          </td>
+          <td>
+            <table bgcolor="#e2ebf6" align="center">
+              <tbody>
+                <tr>
+                  <td>0.385450</td>
+                  <td>0.769005</td>
+                  <td>-0.154455</td>
+                </tr>
+                <tr>
+                  <td>0.100526</td>
+                  <td>0.829802</td>
+                  <td>0.069673</td>
+                </tr>
+                <tr>
+                  <td>-0.007442</td>
+                  <td>-0.022190</td>
+                  <td>1.029632</td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+          <td>
+            <table bgcolor="#e2ebf6" align="center">
+              <tbody>
+                <tr>
+                  <td>0.498864</td>
+                  <td>0.674741</td>
+                  <td>-0.173604</td>
+                </tr>
+                <tr>
+                  <td>0.205199</td>
+                  <td>0.754872</td>
+                  <td>0.039929</td>
+                </tr>
+                <tr>
+                  <td>-0.011131</td>
+                  <td>0.030969</td>
+                  <td>0.980162</td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+          <td>
+            <table bgcolor="#e2ebf6" align="center">
+              <tbody>
+                <tr>
+                  <td>1.104996</td>
+                  <td>-0.046633</td>
+                  <td>-0.058363</td>
+                </tr>
+                <tr>
+                  <td>-0.032137</td>
+                  <td>0.971635</td>
+                  <td>0.060503</td>
+                </tr>
+                <tr>
+                  <td>0.001336</td>
+                  <td>0.317922</td>
+                  <td>0.680742</td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div align="center">0.7</div>
+          </td>
+          <td>
+            <table bgcolor="#e2ebf6" align="center">
+              <tbody>
+                <tr>
+                  <td>0.319627</td>
+                  <td>0.849633</td>
+                  <td>-0.169261</td>
+                </tr>
+                <tr>
+                  <td>0.106241</td>
+                  <td>0.815969</td>
+                  <td>0.077790</td>
+                </tr>
+                <tr>
+                  <td>-0.007025</td>
+                  <td>-0.028051</td>
+                  <td>1.035076</td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+          <td>
+            <table bgcolor="#e2ebf6" align="center">
+              <tbody>
+                <tr>
+                  <td>0.457771</td>
+                  <td>0.731899</td>
+                  <td>-0.189670</td>
+                </tr>
+                <tr>
+                  <td>0.226409</td>
+                  <td>0.731012</td>
+                  <td>0.042579</td>
+                </tr>
+                <tr>
+                  <td>-0.011595</td>
+                  <td>0.034333</td>
+                  <td>0.977261</td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+          <td>
+            <table bgcolor="#e2ebf6" align="center">
+              <tbody>
+                <tr>
+                  <td>1.193214</td>
+                  <td>-0.109812</td>
+                  <td>-0.083402</td>
+                </tr>
+                <tr>
+                  <td>-0.058496</td>
+                  <td>0.979410</td>
+                  <td>0.079086</td>
+                </tr>
+                <tr>
+                  <td>-0.002346</td>
+                  <td>0.403492</td>
+                  <td>0.598854</td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div align="center">0.8</div>
+          </td>
+          <td>
+            <table bgcolor="#e2ebf6" align="center">
+              <tbody>
+                <tr>
+                  <td>0.259411</td>
+                  <td>0.923008</td>
+                  <td>-0.182420</td>
+                </tr>
+                <tr>
+                  <td>0.110296</td>
+                  <td>0.804340</td>
+                  <td>0.085364</td>
+                </tr>
+                <tr>
+                  <td>-0.006276</td>
+                  <td>-0.034346</td>
+                  <td>1.040622</td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+          <td>
+            <table bgcolor="#e2ebf6" align="center">
+              <tbody>
+                <tr>
+                  <td>0.422823</td>
+                  <td>0.781057</td>
+                  <td>-0.203881</td>
+                </tr>
+                <tr>
+                  <td>0.245752</td>
+                  <td>0.709602</td>
+                  <td>0.044646</td>
+                </tr>
+                <tr>
+                  <td>-0.011843</td>
+                  <td>0.037423</td>
+                  <td>0.974421</td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+          <td>
+            <table bgcolor="#e2ebf6" align="center">
+              <tbody>
+                <tr>
+                  <td>1.257728</td>
+                  <td>-0.139648</td>
+                  <td>-0.118081</td>
+                </tr>
+                <tr>
+                  <td>-0.078003</td>
+                  <td>0.975409</td>
+                  <td>0.102594</td>
+                </tr>
+                <tr>
+                  <td>-0.003316</td>
+                  <td>0.501214</td>
+                  <td>0.502102</td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div align="center">0.9</div>
+          </td>
+          <td>
+            <table bgcolor="#e2ebf6" align="center">
+              <tbody>
+                <tr>
+                  <td>0.203876</td>
+                  <td>0.990338</td>
+                  <td>-0.194214</td>
+                </tr>
+                <tr>
+                  <td>0.112975</td>
+                  <td>0.794542</td>
+                  <td>0.092483</td>
+                </tr>
+                <tr>
+                  <td>-0.005222</td>
+                  <td>-0.041043</td>
+                  <td>1.046265</td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+          <td>
+            <table bgcolor="#e2ebf6" align="center">
+              <tbody>
+                <tr>
+                  <td>0.392952</td>
+                  <td>0.823610</td>
+                  <td>-0.216562</td>
+                </tr>
+                <tr>
+                  <td>0.263559</td>
+                  <td>0.690210</td>
+                  <td>0.046232</td>
+                </tr>
+                <tr>
+                  <td>-0.011910</td>
+                  <td>0.040281</td>
+                  <td>0.971630</td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+          <td>
+            <table bgcolor="#e2ebf6" align="center">
+              <tbody>
+                <tr>
+                  <td>1.278864</td>
+                  <td>-0.125333</td>
+                  <td>-0.153531</td>
+                </tr>
+                <tr>
+                  <td>-0.084748</td>
+                  <td>0.957674</td>
+                  <td>0.127074</td>
+                </tr>
+                <tr>
+                  <td>-0.000989</td>
+                  <td>0.601151</td>
+                  <td>0.399838</td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div align="center">1.0</div>
+          </td>
+          <td>
+            <table bgcolor="#e2ebf6" align="center">
+              <tbody>
+                <tr>
+                  <td>0.152286</td>
+                  <td>1.052583</td>
+                  <td>-0.204868</td>
+                </tr>
+                <tr>
+                  <td>0.114503</td>
+                  <td>0.786281</td>
+                  <td>0.099216</td>
+                </tr>
+                <tr>
+                  <td>-0.003882</td>
+                  <td>-0.048116</td>
+                  <td>1.051998</td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+          <td>
+            <table bgcolor="#e2ebf6" align="center">
+              <tbody>
+                <tr>
+                  <td>0.367322</td>
+                  <td>0.860646</td>
+                  <td>-0.227968</td>
+                </tr>
+                <tr>
+                  <td>0.280085</td>
+                  <td>0.672501</td>
+                  <td>0.047413</td>
+                </tr>
+                <tr>
+                  <td>-0.011820</td>
+                  <td>0.042940</td>
+                  <td>0.968881</td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+          <td>
+            <table bgcolor="#e2ebf6" align="center">
+              <tbody>
+                <tr>
+                  <td>1.255528</td>
+                  <td>-0.076749</td>
+                  <td>-0.178779</td>
+                </tr>
+                <tr>
+                  <td>-0.078411</td>
+                  <td>0.930809</td>
+                  <td>0.147602</td>
+                </tr>
+                <tr>
+                  <td>0.004733</td>
+                  <td>0.691367</td>
+                  <td>0.303900</td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <!-- === Section: Citation ===================== -->
+    <div class="h1-shadow-0">
+      <div class="h1-shadow-1">
+        <div class="h1-shadow-2">
+          <h1 id="Reference">Reference</h1>
+        </div>
+      </div>
+    </div>
+    <h2>Citation</h2>
+    <p> Gustavo M. Machado, Manuel M. Oliveira, and Leandro A. F. Fernandes <em>"A
+        Physiologically-based Model for Simulation of Color Vision Deficiency"</em>.
+      <b>IEEE Transactions on Visualization and Computer Graphics.</b> Volume 15
+      (2009), Number 6, November/December 2009. pp. 1291-1298. </p>
+    <h2>BibTeX</h2>
+    <pre>@article{Machado2009,
+   author    = {Gustavo M. Machado and Manuel M. Oliveira and Leandro A. F. Fernandes},
+   title     = {A Physiologically-based Model for Simulation of Color Vision Deficiency},
+   journal   = {IEEE Transactions on Visualization and Computer Graphics},
+   volume    = {15},
+   number    = {6},
+   month     = {November/December},
+   year      = {2009},
+   pages     = {1291-1298} ,
+   publisher = {IEEE Computer Society}
+}
+  </pre>
+    <h2>Keywords</h2>
+    <p> Models of Color Vision, Color Perception, Simulation of Color Vision
+      Deficiency, Anomalous Trichromacy, Dichromacy </p>
+    <!-- vim: set tabstop=2 shiftwidth=2 expandtab: -->
+    <!-- === Section: Acknowledgments ===================== -->
+    <div class="h1-shadow-0">
+      <div class="h1-shadow-1">
+        <div class="h1-shadow-2">
+          <h1 id="Acknowledgments">Acknowledgments</h1>
+        </div>
+      </div>
+    </div>
+    <table>
+      <tbody>
+        <tr>
+          <td valign="middle"><a href="http://www.cnpq.br"><img src="http://www.inf.ufrgs.br/%7Eoliveira/pubs_files/cnpq.png"
+                style="padding: 0 1em;" /></a></td>
+          <td valign="middle">CNPq-Brazil fellowships and grants #
+            200284/2009-6, 131327/2008-9,
+            476954/2008-8, 305613/2007-3 and 142627/2007-0.</td>
+        </tr>
+      </tbody>
+    </table>
+    <!-- === Google Analytics ===================== -->
+    <script type="text/javascript">
+  var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+  document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+  </script>
+    <script type="text/javascript">
+  try {
+  var pageTracker = _gat._getTracker("UA-8032307-1");
+  pageTracker._trackPageview();
+  } catch(err) {}</script>
+    <!-- Google Analytics -->
+  </body>
+</html>
